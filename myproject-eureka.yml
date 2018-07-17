@@ -8,7 +8,7 @@ server:
 spring:
   application:
     profiles: dev 
-    name: myspringcloud-config-eureka—client
+    name: myproject-eureka
     
 eureka: 
   instance:
@@ -26,7 +26,7 @@ server:
 spring:
   profiles: test
   application:
-    name: myspringcloud-config-eureka—client
+    name: myproject-eureka
 eureka: 
   instance:
     hostname: eureka7001.com #eureka服务端的实例名称
