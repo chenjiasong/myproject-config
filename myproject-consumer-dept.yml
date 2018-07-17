@@ -1,0 +1,58 @@
+﻿spring:
+  profiles:
+    active:
+    - dev  
+---
+server:
+  port: 80
+  tomcat:
+    uri-encoding: UTF-8
+    
+spring:
+  application:
+    profiles: dev 
+    name: myproject-consumer-dept
+    
+feign:
+  hystrix:
+    enabled: true
+    
+eureka:
+  client:
+    register-with-eureka: false
+    service-url: 
+      defaultZone: http://localhost:7001/eureka/
+      
+info:
+  app.name: cjs-myproject-consumer-dept
+  company.name: www.cjs.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+   
+---
+server:
+  port: 81
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  application:
+    profiles: test 
+    name: myproject-consumer-dept
+    
+feign:
+  hystrix:
+    enabled: true
+    
+eureka:
+  client:
+    register-with-eureka: false
+    service-url: 
+      defaultZone: http://localhost:7001/eureka/
+
+info:
+  app.name: cjs-myproject-consumer-dept
+  company.name: www.cjs.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+#请保存UTF-8格式
