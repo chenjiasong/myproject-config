@@ -1,0 +1,38 @@
+﻿spring:
+  profiles:
+    active:
+    - dev  
+---
+server:
+  port: 9001
+  tomcat:
+    uri-encoding: UTF-8
+    
+spring:
+  application:
+    profiles: dev 
+    name: myproject-hystrix-dashboard   
+      
+info:
+  app.name: cjs-myproject-hystrix-dashboard
+  company.name: www.cjs.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+   
+---
+server:
+  port: 9002
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  application:
+    profiles: test 
+    name: myproject-hystrix-dashboard
+
+info:
+  app.name: cjs-myproject-hystrix-dashboard
+  company.name: www.cjs.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+#请保存UTF-8格式

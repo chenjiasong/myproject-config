@@ -1,0 +1,70 @@
+﻿spring:
+  profiles:
+    active:
+    - dev  
+---
+server:
+  port: 9527
+  tomcat:
+    uri-encoding: UTF-8
+    
+spring:
+  application:
+    profiles: dev 
+    name: myproject-zuul-gateway
+    
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: myproject-zuul-gateway
+    prefer-ip-address: true 
+    
+zuul:
+  #ignored-services: myspringcloud-dept #原真实微服务名屏蔽
+  prefix: /cjs   #http://myzuul.com:9527/cjs/mydept/dept/list  访问地址
+  ignored-services: "*"
+  routes:
+    mydept.serviceId: myproject-dept
+    mydept.path: /mydept/** #代理真实微服务名  http://myzuul.com:9527/mydept/dept/list访问地址
+      
+info:
+  app.name: cjs-myproject-zuul-gateway
+  company.name: www.cjs.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+   
+---
+server:
+  port: 9528
+  tomcat:
+    uri-encoding: UTF-8
+    
+spring:
+  application:
+    profiles: dev 
+    name: myproject-zuul-gateway
+    
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: myproject-zuul-gateway
+    prefer-ip-address: true 
+    
+zuul:
+  #ignored-services: myspringcloud-dept #原真实微服务名屏蔽
+  prefix: /cjs   #http://myzuul.com:9527/cjs/mydept/dept/list  访问地址
+  ignored-services: "*"
+  routes:
+    mydept.serviceId: myproject-dept
+    mydept.path: /mydept/** #代理真实微服务名  http://myzuul.com:9527/mydept/dept/list访问地址
+      
+info:
+  app.name: cjs-myproject-zuul-gateway
+  company.name: www.cjs.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+#请保存UTF-8格式
