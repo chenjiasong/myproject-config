@@ -26,8 +26,9 @@ zuul:
   prefix: /cjs   #http://myzuul.com:9527/cjs/mydept/dept/list  访问地址
   ignored-services: "*"
   routes:
-    mydept.serviceId: myproject-dept
-    mydept.path: /mydept/** #代理真实微服务名  http://myzuul.com:9527/mydept/dept/list访问地址
+    system:
+        serviceId: myproject-dept
+        path: /mydept/** #代理真实微服务名  http://myzuul.com:9527/mydept/dept/list访问地址      
       
 info:
   app.name: cjs-myproject-zuul-gateway
@@ -59,8 +60,9 @@ zuul:
   prefix: /cjs   #http://myzuul.com:9527/cjs/mydept/dept/list  访问地址
   ignored-services: "*"
   routes:
-    mydept.serviceId: myproject-dept
-    mydept.path: /mydept/** #代理真实微服务名  http://myzuul.com:9527/mydept/dept/list访问地址
+    system:
+        serviceId: myproject-dept
+        path: /mydept/** #代理真实微服务名  http://myzuul.com:9527/mydept/dept/list访问地址
       
 info:
   app.name: cjs-myproject-zuul-gateway
