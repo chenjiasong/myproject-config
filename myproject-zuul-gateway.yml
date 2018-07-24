@@ -29,6 +29,8 @@ zuul:
     system:
         serviceId: myproject-dept
         path: /mydept/** #代理真实微服务名  http://myzuul.com:9527/mydept/dept/list访问地址      
+        stripPrefix: true
+        sensitiveHeaders:
       
 info:
   app.name: cjs-myproject-zuul-gateway
@@ -63,6 +65,8 @@ zuul:
     system:
         serviceId: myproject-dept
         path: /mydept/** #代理真实微服务名  http://myzuul.com:9527/mydept/dept/list访问地址
+        stripPrefix: true
+        sensitiveHeaders:
       
 info:
   app.name: cjs-myproject-zuul-gateway
