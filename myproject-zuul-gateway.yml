@@ -43,7 +43,7 @@ server:
     
 spring:
   application:
-    profiles: dev 
+    profiles: test 
     name: myproject-zuul-gateway
     
 eureka: 
