@@ -23,7 +23,7 @@ eureka:
     
 zuul:
   #ignored-services: myspringcloud-dept #原真实微服务名屏蔽
-  prefix: /cjs   #http://myzuul.com:9527/cjs/mydept/dept/list  访问地址
+  #prefix: /cjs   #http://myzuul.com:9527/cjs/mydept/dept/list  访问地址
   ignored-services: "*"
   routes:
     system:
@@ -59,7 +59,7 @@ eureka:
     
 zuul:
   #ignored-services: myspringcloud-dept #原真实微服务名屏蔽
-  prefix: /cjs   #http://myzuul.com:9527/cjs/mydept/dept/list  访问地址
+  #prefix: /cjs   #http://myzuul.com:9527/cjs/mydept/dept/list  访问地址
   ignored-services: "*"
   routes:
     system:
